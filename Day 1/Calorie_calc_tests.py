@@ -6,3 +6,6 @@ def test_findMax():
 
 def test_readFile():
     assert Calorie_calc.readData("testdata.txt") == [2, 3, 5]
+
+def test_findMaxTopThree():
+    assert Calorie_calc.readData("testdata.txt") == [2, 3, 5]
