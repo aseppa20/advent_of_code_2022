@@ -83,11 +83,10 @@ def main():
     for line in f.readlines():
         line = line.rstrip()
         players = line.split(" ")
-        players2 = players
-        #scorePlayer += rps( translateStrategy( players ) )
-        scorePlayerBetter += rps( translateStrategyBetter( players2 ) )
+        scorePlayer += rps( translateStrategy( players ) )
+        scorePlayerBetter += rps( translateStrategyBetter( players ) )
 
-    #print(f"Part 1: {scorePlayer}")
+    print(f"Part 1: {scorePlayer}")
     print(f"Part 2: {scorePlayerBetter}")
 
 if __name__ == "__main__":
