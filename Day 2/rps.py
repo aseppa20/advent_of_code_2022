@@ -83,8 +83,9 @@ def main():
     for line in f.readlines():
         line = line.rstrip()
         players = line.split(" ")
+        players2 = list(players)
         scorePlayer += rps( translateStrategy( players ) )
-        scorePlayerBetter += rps( translateStrategyBetter( players ) )
+        scorePlayerBetter += rps( translateStrategyBetter( players2 ) )
 
     print(f"Part 1: {scorePlayer}")
     print(f"Part 2: {scorePlayerBetter}")
