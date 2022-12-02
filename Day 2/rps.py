@@ -5,6 +5,8 @@
 
 #SCORE_OPPONENT = 0
 
+import time
+
 def translateStrategy(rpsPair):
     
     #Player Opponent:
@@ -68,7 +70,7 @@ def rps( rpsPair ):
     if int(rpsPair[0]) == int(rpsPair[1]):
         return rpsPair[1] + 3
     
-    #Player wins:
+    #Player loses:
     if int(rpsPair[0]) == 1 and int(rpsPair[1]) == 3 or int(rpsPair[0]) == 2 and int(rpsPair[1]) == 1 or int(rpsPair[0]) == 3 and int(rpsPair[1]) == 2:
         return rpsPair[1]
     
