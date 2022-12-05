@@ -51,20 +51,33 @@ def readTops() -> str:
     return result
 
 
-def main(filename="input.txt"):
+def main(filename="input.txt", ver=2):
     
     buildStacks(filename)
 
-    with open(filename, "r") as file:
-        for line in file.readlines():
-            
-            if line.find("move") < 0:
-                continue
+    if ver == 1:
+        with open(filename, "r") as file:
+            for line in file.readlines():
+                
+                if line.find("move") < 0:
+                    continue
 
-            executeInstructionsP2( parseInstructions(line) )
+                executeInstructions( parseInstructions(line) )
 
-        file.close()
+            file.close()
     
+    else:
+        with open(filename, "r") as file:
+            for line in file.readlines():
+                
+                if line.find("move") < 0:
+                    continue
+
+                executeInstructionsP2( parseInstructions(line) )
+
+            file.close()    
+
+
     print( readTops() )
 
 

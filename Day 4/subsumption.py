@@ -1,3 +1,5 @@
+import time
+
 def checkSubsumption(tasksA: tuple, tasksB: tuple, flipped=False) -> bool:
     if int(tasksA[0]) <= int(tasksB[0]) and int(tasksA[1]) >= int(tasksB[1]):
         return True
@@ -21,8 +23,8 @@ def checkOverlap(tasksA: tuple, tasksB: tuple, flipped=False) -> bool:
     return False
 
 
-def main(filename="input.txt"):
-    
+def main(filename="bigboy.txt"):
+    tstart = time.time()
     counterSub = 0
     counterOverlap = 0
 
@@ -39,6 +41,7 @@ def main(filename="input.txt"):
                 counterOverlap += 1
 
     print(f"{counterSub} , {counterOverlap}")
+    print("{} s".format(time.time() - tstart))
     return (counterSub , counterOverlap)
 
 
