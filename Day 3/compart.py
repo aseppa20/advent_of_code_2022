@@ -1,5 +1,4 @@
 from letters import lettersToNumbers as LTN
-import time
 
 def cutInHalf(toBeHalved: str) -> tuple:
     halfPoint = len(toBeHalved)/2
@@ -45,7 +44,6 @@ def findCommonInGroup(group: list) -> str:
     return triplets[0]
 
 def main(inFile="input.txt"):
-    timeN = time.time()
     result = 0
     result2 = 0
 
@@ -65,7 +63,6 @@ def main(inFile="input.txt"):
                 temp.append(line)
     
     print(result, result2)
-    print("{} s".format(time.time() - timeN))
     return (result, result2)
 
 
