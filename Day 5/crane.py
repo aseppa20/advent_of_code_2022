@@ -1,6 +1,16 @@
-STACKS = [[],[],[],[],[],[],[],[],[],[]]
+import time
+
+STACKS = []
 
 def buildStacks(filename: str):
+    with open(filename, "r") as file:
+        stackSize = (len(file.readline()) / 4) + 1
+
+        for i in range(int(stackSize)):
+            STACKS.append([])
+
+    file.close()
+    
     with open(filename, "r") as file:
         lineReader = 1
         pos = 1
@@ -51,8 +61,10 @@ def readTops() -> str:
     return result
 
 
-def main(filename="input.txt", ver=2):
+def main(filename="input.txt", ver=1):
     
+    timeS = time.time()
+
     buildStacks(filename)
 
     if ver == 1:
@@ -79,6 +91,7 @@ def main(filename="input.txt", ver=2):
 
 
     print( readTops() )
+    print("{} s".format( time.time() - timeS))
 
 
 if __name__ == "__main__":
